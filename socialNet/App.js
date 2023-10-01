@@ -1,12 +1,12 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
-import FeedPost from './src/components/FeedPost';
+import { StyleSheet, Text, View, FlatList} from 'react-native';
+import CreatePostScreen from "./src/screens/CreatePostScreen";
 
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <FeedPost />
+      <CreatePostScreen />
       <StatusBar style="auto" />
     </View>
   );
@@ -15,7 +15,7 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: 'lightgray',
     alignItems: 'center',
     justifyContent: 'center',
   },
