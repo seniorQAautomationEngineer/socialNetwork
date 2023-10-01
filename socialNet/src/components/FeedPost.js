@@ -14,9 +14,12 @@ const FeedPost = ({ post }) => {
   const [isLiked, setIsLiked] = useState(false);
 
   return (
-      <View style={styles.post}>
+      <Pressable style={styles.post}>
         {/* Post Header with details about the author */}
-        <View style={styles.header}>
+        <Pressable 
+          style={styles.header}
+          onPress={() => navigation.navigate("Profile", { id: post.postUserId })}
+        >
           <Image
             source={{ uri: post.User.image }}
             style={styles.profileImage}
@@ -31,7 +34,7 @@ const FeedPost = ({ post }) => {
             color="gray"
             style={styles.icon}
           />
-        </View>
+        </Pressable>
 
         {/* Post body with description and image */}
         <Text style={styles.description}>{post.description}</Text>
@@ -92,7 +95,7 @@ const FeedPost = ({ post }) => {
             </View>
           </View>
         </View>
-      </View>
+      </Pressable>
   );
 }
 
