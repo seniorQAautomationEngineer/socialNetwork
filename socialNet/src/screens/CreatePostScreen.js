@@ -3,6 +3,7 @@ import { View, Text, StyleSheet, TextInput, Image, Button } from "react-native";
 import { Entypo } from "@expo/vector-icons";
 import * as ImagePicker from "expo-image-picker";
 
+
 const user = {
   id: "u1",
   image:
@@ -36,7 +37,6 @@ const CreatePostScreen = () => {
 
   return (
     <View style={styles.container}>
-      <Text>Create Post Screen</Text>
 
       <View style={styles.header}>
         <Image source={{ uri: user.image }} style={styles.profileImage} />
