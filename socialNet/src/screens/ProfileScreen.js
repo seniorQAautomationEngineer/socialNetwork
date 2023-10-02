@@ -54,7 +54,10 @@ import {
                   Add to Story
                 </Text>
               </Pressable>
-              <Pressable style={styles.button}>
+              <Pressable 
+                style={styles.button}
+                onPress={() => navigation.navigate("Update Profile")}
+              >
                 <MaterialCommunityIcons name="pencil" size={16} color="black" />
                 <Text style={styles.buttonText}>Edit Profile</Text>
               </Pressable>
