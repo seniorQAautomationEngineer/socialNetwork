@@ -4,10 +4,11 @@ import Navigator from "./src/navigation";
 import { SafeAreaProvider } from "react-native-safe-area-context";
 import { Amplify } from "aws-amplify";
 import awsconfig from "./src/aws-exports";
+import { withAuthenticator } from 'aws-amplify-react-native';
 
-Amplify.configure(awsconfig);
+Amplify.configure({ ...awsconfig, Analytics: { disabled: true } });
 
-export default function App() {
+function App() {
   return (
     <SafeAreaProvider style={styles.container}>
       <Navigator />
@@ -23,3 +24,5 @@ const styles = StyleSheet.create({
     backgroundColor: "#c9c9c9",
   },
 });
+
+export default withAuthenticator(App);

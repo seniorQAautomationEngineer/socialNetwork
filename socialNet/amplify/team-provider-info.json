@@ -10,6 +10,11 @@
       "StackName": "amplify-socialnet-staging-162012",
       "StackId": "arn:aws:cloudformation:us-east-2:283790235581:stack/amplify-socialnet-staging-162012/90764cd0-613f-11ee-85c6-065d3db7e079",
       "AmplifyAppId": "d2sqxoqzp93dj6"
+    },
+    "categories": {
+      "auth": {
+        "socialNet": {}
+      }
     }
   }
 }
