@@ -2,6 +2,9 @@ import { useState } from "react";
 import { View, Text, StyleSheet, TextInput, Image, Button } from "react-native";
 import { Entypo } from "@expo/vector-icons";
 import * as ImagePicker from "expo-image-picker";
+import { DataStore } from "@aws-amplify/datastore";
+import { Post } from "../models";
+import { useNavigation } from "@react-navigation/native";
 
 
 const user = {
@@ -14,10 +17,24 @@ const user = {
 const CreatePostScreen = () => {
   const [description, setDescription] = useState("");
   const [image, setImage] = useState(null);
+  const navigation = useNavigation();
 
-  const onPost = () => {
-    console.warn("Posting: ", description);
+  const onPost = async () => {
+    await DataStore.save(
+      new Post({
+        description: description,
+        // "imag": "Lorem ipsum dolor sit amet",
+        numberOfLikes: 1020,
+        numberOfShares: 1020,
+        postUserId: user.id,
+        _version: 1
+      })
+    );
+  
     setDescription("");
+    setImage("");
+  
+    navigation.goBack();
   };
 
   const pickImage = async () => {
